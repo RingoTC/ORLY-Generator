@@ -12,4 +12,6 @@ ORLY出版社图书封面生成器
 [ORLY Generator](https://ringotc.github.io/orly/)
 
 # 示例
-!(示例截图)[https://raw.githubusercontent.com/RingoTC/ORLY-Generator/master/screenshot.png]
+
+![示例截图](https://raw.githubusercontent.com/RingoTC/ORLY-Generator/master/screenshot.png)
+
