@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="html2canvas.min.js"></script>
+    <title>ORLY Generator</title>
+</head>
+<body>
+    <div class="main">
+        <div class="cover" id="cover">
+            <div class="cover-content">
+                <div class="toptext">
+                    <p contenteditable="true">Top Text 顶部文字</p>
+                </div>
+                <div class="cover-image">
+                    <img id="animal" src="cover/01.png">
+                </div>
+                <div class="title">
+                    <h1 contenteditable="true">TypeScript<br/>从入门到入坑</h1>
+                </div>
+                <div class="subtitle">
+                    <h1 contenteditable="true">Guide Text 副标题</h1>
+                </div>
+                <div class="footer">
+                    <b contenteditable="true" class="orly">某出版社</b>
+                    <b contenteditable="true" class="author">Author 作者</b>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="covers">
+                <img src="cover/01.png" onclick=changeAnimal(01)>
+                <img src="cover/02.png" onclick=changeAnimal(02)>
+                <img src="cover/03.png" onclick=changeAnimal(03)>
+                <img src="cover/04.png" onclick=changeAnimal(04)>
+                <img src="cover/05.png" onclick=changeAnimal(05)>
+                <img src="cover/06.png" onclick=changeAnimal(06)>
+                <img src="cover/07.png" onclick=changeAnimal(07)>
+                <img src="cover/08.png" onclick=changeAnimal(08)>
+                <img src="cover/09.png" onclick=changeAnimal(09)>
+                <img src='cover/10.png' onclick=changeAnimal(10)>
+                <img src='cover/11.png' onclick=changeAnimal(11)>
+                <img src='cover/12.png' onclick=changeAnimal(12)>
+                <img src='cover/13.png' onclick=changeAnimal(13)>
+                <img src='cover/14.png' onclick=changeAnimal(14)>
+                <img src='cover/15.png' onclick=changeAnimal(15)>
+                <img src='cover/16.png' onclick=changeAnimal(16)>
+                <img src='cover/17.png' onclick=changeAnimal(17)>
+                <img src='cover/18.png' onclick=changeAnimal(18)>
+                <img src='cover/19.png' onclick=changeAnimal(19)>
+                <img src='cover/20.png' onclick=changeAnimal(20)>
+                <img src='cover/21.png' onclick=changeAnimal(21)>
+                <img src='cover/22.png' onclick=changeAnimal(22)>
+                <img src='cover/23.png' onclick=changeAnimal(23)>
+                <img src='cover/24.png' onclick=changeAnimal(24)>
+                <img src='cover/25.png' onclick=changeAnimal(25)>
+                <img src='cover/26.png' onclick=changeAnimal(26)>
+                <img src='cover/27.png' onclick=changeAnimal(27)>
+                <img src='cover/28.png' onclick=changeAnimal(28)>
+                <img src='cover/29.png' onclick=changeAnimal(29)>
+                <img src='cover/30.png' onclick=changeAnimal(30)>
+                <img src='cover/31.png' onclick=changeAnimal(31)>
+                <img src='cover/32.png' onclick=changeAnimal(32)>
+                <img src='cover/33.png' onclick=changeAnimal(33)>
+                <img src='cover/34.png' onclick=changeAnimal(34)>
+                <img src='cover/35.png' onclick=changeAnimal(35)>
+                <img src='cover/36.png' onclick=changeAnimal(36)>
+                <img src='cover/37.png' onclick=changeAnimal(37)>
+                <img src='cover/38.png' onclick=changeAnimal(38)>
+                <img src='cover/39.png' onclick=changeAnimal(39)>
+                <img src='cover/40.png' onclick=changeAnimal(40)>
+
+            </div>
+            <div class="colors">
+                <div class="colorInput">
+                    <input id="customColor" type="text" value="#003472"/>
+                </div>
+                <input id="change2Custom" type="button" value="色调修改为自定义"></input>
+            </div>
+            <div class="download" id="download-btn">
+                <span>下载</span>
+            </div>
+        </div>
+    </div>
+    <style>
+        :root{
+            --mainColor:#2b2b2b;
+        }
+        [contenteditable]:focus{outline: none;}
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background:#ccc;
+        }
+        .main{
+            display: grid;
+            grid-template-columns: repeat(2,50%);
+            margin-top:30px;
+        }
+        .panel{
+            border:10px solid #eee;
+            width:500px;
+            display:grid;
+            grid-template-rows:80% 10% 10%;
+        }
+        .panel .download{
+            width:100%;
+            background:#c93756;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .panel .download:hover{
+            background:#ff4d4f;
+        }
+        .panel .download span{
+            font-size:1.5em;
+            color:#fff;
+        }
+        .cover{
+            margin:0 auto;
+            width: 480px;
+            height: 672px;
+            background:#fff;
+            display: flex;
+            justify-content:center;
+            position: relative;
+        }
+        .cover-content{
+            width:440px;
+            height:672px;
+            border-top:10px solid var(--mainColor);
+            transition: ease-in-out 0.5s;
+        }
+        .toptext{
+            text-align:center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .cover-image{
+            margin-top:20px;
+            display:flex;
+            justify-content:center;
+        }
+        .cover-image img{
+            width:380px;
+        }
+        .title{
+            height:140px;
+            background:var(--mainColor);
+            transition: ease-in-out 0.5s;
+            position: relative;
+        }
+        .title h1{
+            font-size:3.5em;
+            font-family: 'EB Garamond', serif;
+            color:#fff;
+            position: absolute;
+            left:10px;
+            bottom:10px;
+        }
+        .subtitle{
+            float: right;
+        }
+        .subtitle h1{
+            font-size:16px;
+        }
+        .footer{
+            margin-bottom: 10px;
+            position: absolute;
+            bottom:0px;
+            width:440px;
+            font-size: 18px;
+            font-weight: normal;
+            font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+        }
+        .footer .author{
+            position: absolute;
+            right:0px;
+        }
+        .covers{
+            display:grid;
+            grid-template-columns: repeat(8,12.5%);
+            background:#eee;
+        }
+        .covers img{
+            width:100%;
+            cursor: pointer;
+            transition: cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+        }
+        .covers img:hover{
+            transform:rotate(-30deg)
+        }
+        .colors{
+            display:grid;
+            grid-template-columns: 60% 40%;
+        }
+        .colors .color{
+            cursor: pointer;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+        }
+        .colors .colorInput{
+            display:flex;
+            justify-content:center;
+            align-items: center;
+        }
+        .colors .colorInput #customColor{
+            background:none;
+            outline:none;
+            border:none;
+            text-align: center;
+            font-size: 24px;
+        }
+        .colors #change2Custom{
+            border:none;
+            outline:none;
+            cursor: pointer;
+            border-radius: 0em;
+            color: #fff;
+            background-color: #1890ff;
+            border-color: #1890ff;
+            text-shadow: 0 -1px 0 rgba(0,0,0,.12);
+            box-shadow: 0 2px 0 rgba(0,0,0,.045);
+            font-size: 1em;
+        }
+        .colors #change2Custom:hover{
+            background:#065279;
+        }
+    </style>
+    <script>
+        let animal = document.getElementById("animal");
+        function exportCanvasAsPNG(canvasElement, fileName) {
+            var MIME_TYPE = "image/png";
+            var imgURL = canvasElement.toDataURL(MIME_TYPE);
+            var dlLink = document.createElement('a');
+            dlLink.download = fileName;
+            dlLink.href = imgURL;
+            dlLink.dataset.downloadurl = [MIME_TYPE, dlLink.download, dlLink.href].join(':');
+            document.body.appendChild(dlLink);
+            dlLink.click();
+            document.body.removeChild(dlLink);
+        }
+        document.getElementById("download-btn").addEventListener("click",function(){
+            html2canvas(document.querySelector("#cover")).then(canvas => {
+                exportCanvasAsPNG(canvas,"save.png")
+            });
+        })
+        function changeAnimal(animalID){
+            if(animalID < 10)
+                animalID = "0" + animalID.toString()
+            else
+                animalID = animalID.toString()
+            animal.src = "cover/"+animalID+".png"
+        }
+        let customColor = document.getElementById("customColor")
+        function change2Custom(){
+            let cColor = customColor.value;
+            document.body.style.setProperty('--mainColor', cColor);
+        }
+        let changeColorBtn = document.getElementById("change2Custom")
+        changeColorBtn.addEventListener('click',change2Custom)
+    </script>
+</body>
+</html>
